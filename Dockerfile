@@ -21,6 +21,9 @@ RUN python3 -m pip install runpod
 
 RUN python3 -m pip cache purge
 
+# Download LoRA model from civitai
+RUN wget -O /workspace/Qwen4Play_v2.safetensors "https://civitai.com/api/download/models/2316696?type=Model&format=SafeTensor"
+
 # Copy handler
 COPY handler.py /workspace/handler.py
 
